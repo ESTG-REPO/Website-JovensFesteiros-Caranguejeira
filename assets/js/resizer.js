@@ -1,58 +1,35 @@
-<script>
   (function ($) {
-    const $slider = $('.custom-photo-viewer');
+    const $slider = $('.slick-carousel');
     let currentMode = null;
 
     const MODES = {
       mobile: {
         min: 0,
-        max: 767,
+        max: 1024,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,
-          dots: true,
-          lazyLoad: 'ondemand',
-          speed: 300,
-          adaptiveHeight: true
-        }
-      },
-      tablet: {
-        min: 768,
-        max: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          fade: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
           arrows: true,
           dots: true,
-          lazyLoad: 'ondemand',
-          speed: 400,
+          pauseOnHover: true,
           adaptiveHeight: true
         }
       },
       desktop: {
         min: 1025,
-        max: 1440,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          arrows: true,
-          dots: false,
-          lazyLoad: 'progressive',
-          speed: 500,
-          adaptiveHeight: true
-        }
-      },
-      ultrawide: {
-        min: 1441,
         max: Infinity,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 2,
+          slidesToShow: 3,           // Changed for desktop
+          slidesToScroll: 1,
+          fade: false,               // Turn off fade
+          autoplay: true,
+          autoplaySpeed: 3000,
           arrows: true,
-          dots: false,
-          lazyLoad: 'progressive',
-          speed: 600,
+          dots: false,               // Less intrusive on desktop
+          pauseOnHover: true,
           adaptiveHeight: true
         }
       }
@@ -60,8 +37,8 @@
 
     function getCurrentMode() {
       const width = window.innerWidth;
-      for (const [mode, config] of Object.entries(MODES)) {
-        if (width >= config.min && width <= config.max) {
+      for (const [mode, conf] of Object.entries(MODES)) {
+        if (width >= conf.min && width <= conf.max) {
           return mode;
         }
       }
@@ -71,7 +48,6 @@
     function applySlickIfNeeded() {
       const newMode = getCurrentMode();
       if (newMode === currentMode) return;
-
       currentMode = newMode;
 
       if ($slider.hasClass('slick-initialized')) {
@@ -87,22 +63,27 @@
       $slider.slick(MODES[newMode].settings);
     }
 
-    let resizeTimeout;
-    function onResizeSmart() {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(applySlickIfNeeded, 200);
+    let resizeTimer;
+    function onSmartResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(applySlickIfNeeded, 200);
     }
 
     if ('ResizeObserver' in window) {
-      const observer = new ResizeObserver(onResizeSmart);
-      observer.observe(document.body);
+      new ResizeObserver(onSmartResize).observe(document.body);
     } else {
-      $(window).on('resize orientationchange', onResizeSmart);
+      $(window).on('resize orientationchange', onSmartResize);
     }
 
     $(document).ready(() => {
       applySlickIfNeeded();
+
+      // Optional: Restore your image zoom effect
+      $slider.on('mouseenter', 'img', function () {
+        $(this).css('transform', 'scale(1.2)');
+      }).on('mouseleave', 'img', function () {
+        $(this).css('transform', 'scale(1)');
+      });
     });
 
   })(jQuery);
-</script>
