@@ -132,43 +132,49 @@
         </button>
         
 <!-- Navbar Links -->
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><!--
+            <li class="nav-item"><a class="nav-link link show text-primary display-4" href="page1.html#gallery01-b"><span class="mbrib-camera mbr-iconfont mbr-iconfont-btn"></span>Dia 1</a></li>
+            <li class="nav-item"><a class="nav-link link show text-primary display-4" href="page2.html#gallery01-1g"><span class="mbrib-camera mbr-iconfont mbr-iconfont-btn"></span>Dia 2</a></li>
+            <li class="nav-item"><a class="nav-link link show text-primary display-4" href="page3.html#gallery01-2k"><span class="mbrib-camera mbr-iconfont mbr-iconfont-btn"></span>Dia 3</a></li>-->
+            <li class="nav-item"><a class="nav-link link show text-primary display-4" href="https://www.facebook.com/profile.php?id=100092446081568" target="_blank">
+                <img src="https://cdn.xperia.pt/Facebook_f_logo_(2019).svg" alt="Facebook" style="width: 42px; height: 42px;">
+            <li class="nav-item">
+               <li class="nav-item"><a class="nav-link link show text-primary display-4" href="https://www.instagram.com/jovensfesteiros2005/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="instagram" style="width: 42px; height: 42px;">
+            <li class="nav-item">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </section>
 
-    <!-- Facebook -->
-    <li class="nav-item">
-      <a class="nav-link link show text-primary display-4" href="https://www.facebook.com/profile.php?id=100092446081568" target="_blank">
-        <img src="https://cdn.xperia.pt/Facebook_f_logo_(2019).svg" alt="Facebook" style="width: 42px; height: 42px;">
-      </a>
-    </li>
+<!-- Slick Carousel Wrapper -->
+<div class="custom-photo-viewer"
+     style="margin: 0; padding: 0; background-image: url('/assets/images/background1.jpg');
+            background-size: cover; background-position: center; width: 100%; height: 100vh;
+            display: flex; justify-content: center; align-items: center; overflow: hidden;">
 
-    <!-- Instagram -->
-    <li class="nav-item">
-      <a class="nav-link link show text-primary display-4" href="https://www.instagram.com/jovensfesteiros2005/" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1024px-Instagram_icon.png" alt="Instagram" style="width: 42px; height: 42px;">
-      </a>
-    </li>
-
-  </ul>
-</div>
-
-<!-- Slick carousel -->
-<div class="custom-photo-viewer" 
-     style="margin: 0; padding: 0; background-image: url('/assets/images/background1.jpg'); 
-            background-size: cover; background-position: center; width: 100%; height: 100vh; 
-            display: flex; justify-content: center; align-items: center;">
-
-  <div class="slick-carousel" style="max-width: 90vw; max-height: 90vh; width: 100%;">
+  <div class="slick-carousel" style="width: 90vw; max-height: 90vh;">
 
     <div>
-      <img src="/assets/images/favicon.png" alt="favicon" style="width: 100%; max-height: 90vh; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease;" />
+      <img src="/assets/images/favicon.png" alt="favicon"
+           style="width: 100%; height: auto; max-height: 90vh;
+                  border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                  transition: transform 0.3s ease;" />
     </div>
+
     <div>
-      <img src="/assets/images/teatro-sd.png" alt="cartaz do teatro joao Dantas" style="width: 100%; max-height: 90vh; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease;" />
+      <img src="/assets/images/teatro-sd.png" alt="Cartaz do Teatro João Dantas"
+           style="width: 100%; height: auto; max-height: 90vh;
+                  border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                  transition: transform 0.3s ease;" />
     </div>
 
   </div>
 </div>
+
 
 <div class="share-bar">
   <a href="https://wa.me/?text=https://festeiros2005.pt" target="_blank" class="share-icon whatsapp">
@@ -592,25 +598,27 @@
   });
 </script>
 
-  <script>
-  $(document).ready(function(){
+ <script>
+  $(document).ready(function () {
     $('.slick-carousel').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      fade: true,
-      autoplay: true,
-      autoplaySpeed: 3000,
       arrows: true,
       dots: true,
-      pauseOnHover: true,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
       adaptiveHeight: true,
+      fade: false, // Optional: set to true for fade effect
+      cssEase: 'ease'
     });
 
-    // Simple zoom on hover 
+    // Optional: zoom on hover effect
     $('.slick-carousel img').hover(
-      function() {
-        $(this).css('transform', 'scale(1.2)');
-      }, function() {
+      function () {
+        $(this).css('transform', 'scale(1.1)');
+      },
+      function () {
         $(this).css('transform', 'scale(1)');
       }
     );
