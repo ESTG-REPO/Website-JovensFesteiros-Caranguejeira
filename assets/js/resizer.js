@@ -1,5 +1,6 @@
+<script>
   (function ($) {
-    const $slider = $('.your-slick-slider');
+    const $slider = $('.custom-photo-viewer');
     let currentMode = null;
 
     const MODES = {
@@ -80,20 +81,18 @@
       $slider.css({
         'will-change': 'transform',
         'backface-visibility': 'hidden',
-        'transform': 'translateZ(0)' // GPU acceleration hint
+        'transform': 'translateZ(0)'
       });
 
       $slider.slick(MODES[newMode].settings);
     }
 
-    // ResizeObserver fallback using window resize
     let resizeTimeout;
     function onResizeSmart() {
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(applySlickIfNeeded, 200);
     }
 
-    // Use ResizeObserver if available
     if ('ResizeObserver' in window) {
       const observer = new ResizeObserver(onResizeSmart);
       observer.observe(document.body);
@@ -106,3 +105,4 @@
     });
 
   })(jQuery);
+</script>
