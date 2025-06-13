@@ -97,7 +97,7 @@
 
 
 
-
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One:400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One:400&display=swap"></noscript>
@@ -484,19 +484,22 @@
 -->
 
 
-<section data-bs-version="5.1" class="form5 cid-uMuP3U6Ow8 py-5" id="form5-0" style="background: url('/assets/images/background1.jpg') center center / cover no-repeat; position: relative;">
-  <div class="mbr-overlay" style="background-color: rgba(0, 0, 0, 0.5); position: absolute; inset: 0; z-index: 1;"></div>
+<!-- Add this in your <head> if not already included -->
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&display=swap" rel="stylesheet">
 
-  <div class="container position-relative z-2 text-white">
+<section data-bs-version="5.1" class="form5 cid-uMuP3U6Ow8 py-5" id="form5-0" style="background: url('/assets/images/background1.jpg') center center / cover no-repeat; position: relative; font-family: 'Fredoka', cursive;">
+  <div class="mbr-overlay" style="background-color: rgba(0, 0, 0, 0.4); position: absolute; inset: 0; z-index: 1;"></div>
+
+  <div class="container position-relative z-2 text-black">
     <div class="mbr-section-head text-center mb-5">
-      <h3 class="mbr-section-title mbr-fonts-style display-4 fw-bold">
+      <h3 class="mbr-section-title display-4 fw-bold">
         Peça <em>Bilhete</em> Aqui!
       </h3>
     </div>
 
     <div class="row justify-content-center">
       <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-        <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler bg-white p-4 p-md-5 rounded shadow-lg" data-form-title="Form Name">
+        <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler p-0" data-form-title="Form Name">
           <input type="hidden" name="email" data-form-email="true" value="...">
 
           <div class="row">
@@ -511,29 +514,29 @@
           <div class="row g-3 mb-4">
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" name="name" class="form-control" id="name-form5-0" placeholder="Nome" data-form-field="name" required>
-                <label for="name-form5-0">Nome</label>
+                <input type="text" name="name" class="form-control bg-transparent text-black fw-bold border-dark" id="name-form5-0" placeholder="Nome" data-form-field="name" required>
+                <label for="name-form5-0" class="text-dark fw-bold">Nome</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="email" name="email" class="form-control" id="email-form5-0" placeholder="E-mail" data-form-field="email" required>
-                <label for="email-form5-0">E-mail</label>
+                <input type="email" name="email" class="form-control bg-transparent text-black fw-bold border-dark" id="email-form5-0" placeholder="E-mail" data-form-field="email" required>
+                <label for="email-form5-0" class="text-dark fw-bold">E-mail</label>
               </div>
             </div>
           </div>
 
           <div class="text-center mb-3">
-            <button type="submit" class="btn btn-warning px-5 py-2 text-dark fw-semibold shadow-sm">
+            <button type="submit" class="btn btn-warning px-5 py-2 text-dark fw-bold shadow-sm">
               Enviar
             </button>
           </div>
 
           <div class="text-center">
-            <a href="tel:932962753" class="btn btn-outline-light me-2 mb-2">
+            <a href="tel:932962753" class="btn btn-outline-light me-2 mb-2 fw-bold">
               📞 Ligar 932 962 753
             </a>
-            <a href="tel:915355533" class="btn btn-outline-light mb-2">
+            <a href="tel:915355533" class="btn btn-outline-light mb-2 fw-bold">
               📞 Ligar 915 355 533
             </a>
           </div>
@@ -542,6 +545,7 @@
     </div>
   </div>
 </section>
+
 
 <footer class="mbr-section footer1 cid-tIsjhWS5IM" id="footer1-2" style="position: relative; overflow: hidden;">
     <video autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
