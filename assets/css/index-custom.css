@@ -249,3 +249,99 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
+#footer1-2 {
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+  background: #111;
+}
+
+/* Canvas fills footer */
+#particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+.footer-content p {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+}
+
+.footer-content p + p {
+  margin-top: 8px;
+}
+
+.footer-content a {
+  color: #f7c59f;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/* Heart pulse animation */
+.heart {
+  display: inline-block;
+  color: #e25555;
+  animation: pulse 1.5s infinite;
+  font-size: 22px;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Share bar styles */
+.share-bar {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.share-icon {
+  color: #f7c59f;
+  font-size: 26px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-icon:hover {
+  color: #e25555;
+  transform: scale(1.2);
+}
