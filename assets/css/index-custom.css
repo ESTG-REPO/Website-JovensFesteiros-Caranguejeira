@@ -225,3 +225,27 @@
 .video-controls button:hover {
   background-color: #f0f0f0;
 }
+.slick-carousel {
+  width: 90vw;
+  max-height: 90vh;
+  margin: 0 auto;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Keeps images centered and prevents stretching */
+.slick-carousel img {
+  width: 100%;
+  height: auto;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}

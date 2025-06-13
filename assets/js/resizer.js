@@ -1,4 +1,5 @@
-  (function ($) {
+(function ($) {
+  $(document).ready(() => {
     const $slider = $('.slick-carousel');
     let currentMode = null;
 
@@ -7,7 +8,6 @@
         min: 0,
         max: 1024,
         settings: {
-          slidesToShow: 1,
           slidesToScroll: 1,
           fade: true,
           autoplay: true,
@@ -22,13 +22,12 @@
         min: 1025,
         max: Infinity,
         settings: {
-          slidesToShow: 3,           // Changed for desktop
           slidesToScroll: 1,
-          fade: false,               // Turn off fade
+          fade: false,
           autoplay: true,
           autoplaySpeed: 3000,
           arrows: true,
-          dots: false,               // Less intrusive on desktop
+          dots: false,
           pauseOnHover: true,
           adaptiveHeight: true
         }
@@ -60,7 +59,14 @@
         'transform': 'translateZ(0)'
       });
 
-      $slider.slick(MODES[newMode].settings);
+      const slideCount = $slider.children().length;
+      const modeSettings = { ...MODES[newMode].settings };
+
+      // ✅ Always define slidesToShow based on real count
+      modeSettings.slidesToShow = Math.min(slideCount, newMode === 'desktop' ? 3 : 1);
+
+      console.log(`Applying slick in ${newMode} mode with ${slideCount} slides`);
+      $slider.slick(modeSettings);
     }
 
     let resizeTimer;
@@ -70,20 +76,17 @@
     }
 
     if ('ResizeObserver' in window) {
-      new ResizeObserver(onSmartResize).observe(document.body);
+      new ResizeObserver(() => onSmartResize()).observe(document.body);
     } else {
       $(window).on('resize orientationchange', onSmartResize);
     }
 
-    $(document).ready(() => {
-      applySlickIfNeeded();
+    applySlickIfNeeded();
 
-      // Optional: Restore your image zoom effect
-      $slider.on('mouseenter', 'img', function () {
-        $(this).css('transform', 'scale(1.2)');
-      }).on('mouseleave', 'img', function () {
-        $(this).css('transform', 'scale(1)');
-      });
+    $slider.on('mouseenter', 'img', function () {
+      $(this).css('transform', 'scale(1.2)');
+    }).on('mouseleave', 'img', function () {
+      $(this).css('transform', 'scale(1)');
     });
-
-  })(jQuery);
+  });
+})(jQuery);
