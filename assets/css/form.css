@@ -40,3 +40,14 @@
   border-color: #ffc107;
   transform: scale(1.05);
 }
+.thick-border {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+.glass-form {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
