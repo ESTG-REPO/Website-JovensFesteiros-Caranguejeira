@@ -180,31 +180,57 @@
     <h3 class="display-4 fw-bold mb-4">👇👇👇</h3>
 
     <div class="row justify-content-center">
-            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-        <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="dMLUIQf5gQgijDWVqbI/DkAEYaIebuEgUAWCbq6ErB2BaJN8SrDFflPnl+Epf0LInDqiuAO+9xz/LZlC9x6YZGukyZJg1kSDjN4+7LNNzc1G+7Sv/NrjBHcIuLvTRaql">
-        <!--<form action="https://formsubmit.co/diogopontecardoso@gmail.com" method="POST" class="glass-form p-4 rounded-4 shadow-lg" data-form-title="Form Name">-->
-          <div hidden data-form-alert class="alert alert-success text-center fw-bold">
-            Pedido de Bilhete Enviado!
+      <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+        <form 
+          action="https://formsubmit.co/diogopontecardoso@gmail.com" 
+          method="POST" 
+          class="mbr-form form-with-styler needs-validation glass-form p-4 rounded-4 shadow-lg border border-light-subtle" 
+          novalidate 
+          data-form-title="Formulário de Pedido de Bilhete"
+        >
+          <!-- HONEYPOT (spam prevention) -->
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+
+          <!-- SUCCESS + ERROR MESSAGES -->
+          <div hidden data-form-alert class="alert alert-success text-center fw-bold" role="alert">
+            ✅ Pedido de Bilhete Enviado com Sucesso!
           </div>
-          <div hidden data-form-alert-danger class="alert alert-danger text-center fw-bold">
-            Oops...! Algum problema!
+          <div hidden data-form-alert-danger class="alert alert-danger text-center fw-bold" role="alert">
+            ❌ Ocorreu um erro. Por favor, tente novamente.
           </div>
 
+          <!-- FIELDS -->
           <div class="row g-4 mb-3">
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" name="name" class="form-control thick-border bg-transparent text-white fw-bold" id="name" placeholder="Nome" required>
+                <input 
+                  type="text" 
+                  name="name" 
+                  class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
+                  id="name" 
+                  placeholder="Nome" 
+                  required>
                 <label for="name" class="text-white">Nome</label>
+                <div class="invalid-feedback text-start">Por favor, insira o seu nome.</div>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="email" name="email" class="form-control thick-border bg-transparent text-white fw-bold" id="email" placeholder="E-mail" required>
+                <input 
+                  type="email" 
+                  name="email" 
+                  class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
+                  id="email" 
+                  placeholder="E-mail" 
+                  required>
                 <label for="email" class="text-white">E-mail</label>
+                <div class="invalid-feedback text-start">Por favor, insira um e-mail válido.</div>
               </div>
             </div>
           </div>
 
+          <!-- SUBMIT -->
           <div class="text-center">
             <button type="submit" class="btn btn-warning btn-lg px-5 fw-bold rounded-pill shadow hover-scale">
               ✉️ Enviar Pedido
@@ -214,11 +240,12 @@
       </div>
     </div>
 
+    <!-- CALL TO ACTION -->
     <div class="mt-4">
-      <a href="tel:932962753" class="btn call-btn me-2 mb-2">
+      <a href="tel:932962753" class="btn btn-outline-light me-2 mb-2 fw-bold rounded-pill shadow-sm">
         📞 Ligar 932 962 753
       </a>
-      <a href="tel:915355533" class="btn call-btn mb-2">
+      <a href="tel:915355533" class="btn btn-outline-light mb-2 fw-bold rounded-pill shadow-sm">
         📞 Ligar 915 355 533
       </a>
     </div>
@@ -421,6 +448,22 @@ function() {
     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
     min_height: 100               // optional: minimum editor height
   });
+</script>
+
+<script>
+(() => {
+  'use strict';
+  const forms = document.querySelectorAll('.needs-validation');
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
 </script>
 
 </body>
