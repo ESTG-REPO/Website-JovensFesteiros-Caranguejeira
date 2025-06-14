@@ -51,7 +51,7 @@
 
 /* Carousel container with background image */
 .carousel-container {
-  background-image: url('https://santaeufemia.pt/assets/images/background1.jpg');
+  background-image: url('https://festeiros2005.pt/assets/images/background1.jpg');
   background-size: cover; /* Ensure the background image covers the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -106,7 +106,7 @@
 
     
 .photo-viewer {
-  background-image: url('https://santaeufemia.pt/assets/images/background1.jpg');
+  background-image: url('https://festeiros2005.pt/assets/images/background1.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
