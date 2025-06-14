@@ -82,6 +82,7 @@
   <link rel="stylesheet" href="assets/parallax/jarallax.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/css/share-bar-footer.css">
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css" type="text/css">
 
  <!-- custom css/JS -->
@@ -108,6 +109,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&display=swap"></noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
 
     <!-- Mis JS -->
@@ -310,11 +312,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Localização | Auditorio Caranguejeira</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <link href="assets/css/iframe.css" rel="stylesheet">
-  <script src="assets/js/clock.js"></script>
-  <script src="assets/js/cubes.js"></script>
+
 </head>
 <body>
   <section class="jarallax">
@@ -322,8 +322,6 @@
       <source src="/assets/images/background1.mp4" type="video/mp4" />
     </video>
     <div class="overlay"></div>
-    <canvas id="leftCube" class="three-canvas left-cube"></canvas>
-    <canvas id="rightCube" class="three-canvas right-cube"></canvas>
     <div class="map-section animate__animated animate__fadeInUp">
       <div class="map-title">Contagem para o espetaculo</div>
       <div id="countdown" class="countdown">00d 00h 00m 00s</div>
@@ -338,11 +336,31 @@
       </div>
     </div>
   </section>
+      <script>
+      const countdownElement = document.getElementById("countdown");
+    const targetDate = new Date("2025-07-18T21:00:00");
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        countdownElement.textContent = "Acabou 😢";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    <script>
 </body>
 </html>'>
 </iframe>
 
-  
+    <canvas id="leftCube" class="three-canvas left-cube"></canvas>
+    <canvas id="rightCube" class="three-canvas right-cube"></canvas>
 
 <footer class="mbr-section footer1 cid-tIsjhWS5IM" id="footer1-2" style="position: relative; overflow: hidden;">
     <video autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
@@ -360,7 +378,7 @@
 </footer>
 
 
-       <div class="share-bar">
+       <div class="share-bar-footer">
           <a href="https://wa.me/?text=https://festeiros2005.pt" target="_blank" class="share-icon whatsapp">
             <i class="bi bi-whatsapp"></i>
           </a>
@@ -383,7 +401,6 @@
 <script src="assets/smoothscroll/smooth-scroll.js"></script>
 <script src="assets/ytplayer/index.js"></script>
 <script src="assets/dropdown/js/navbar-dropdown.js"></script>
-<script src="assets/vimeoplayer/player.js"></script>
 <script src="assets/theme/js/script.js"></script>
 <script src="assets/formoid/formoid.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
@@ -391,28 +408,14 @@
 <script src="https://cdn.tiny.cloud/1/98nd6ewaarj49azw8qk77r2r6wozr9yh8zhk4yywzbb4xfk5/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/cubes.js.js"></script>
+<script src="assets/js/resizer.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get the photo viewer element
-    const photoViewer = document.querySelector('.custom-photo-viewer');
-
-    // Check if the element exists
-    if (photoViewer) {
-      // Set background image directly using JavaScript
-      photoViewer.style.backgroundImage = "url('https://festeiros2005.pt/assets/images/background1.jpg')";
-      photoViewer.style.backgroundSize = "cover";
-      photoViewer.style.backgroundPosition = "center";
-      photoViewer.style.width = "100%";
-      photoViewer.style.height = "100vh"; // Or any desired height
-      photoViewer.style.display = "flex";
-      photoViewer.style.justifyContent = "center";
-      photoViewer.style.alignItems = "center";
-
-      // Optional: Log a message to confirm the background was set
+function() {
       console.log('FODASSE OS ERROS.');
     }
-  });
+
 </script>
 
  <script>

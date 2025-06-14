@@ -1,0 +1,56 @@
+
+.share-bar-footer {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.share-icon {
+  display: inline-block;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  color: #555;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.share-icon:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.1);
+}
+
+.share-icon.whatsapp:hover {
+  background-color: #25D366;
+}
+
+.share-icon.facebook:hover {
+  background-color: #3b5998;
+}
+
+.share-icon.messenger:hover {
+  background-color: #0084ff;
+}
+
+.share-icon.instagram:hover {
+  background-color: #e4405f;
+}
+.share-text {
+  font-family: "Monoton", cursive;
+  font-size: 5rem;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+  font-weight: bold;  /* Ensures the text is bold */
+}
+
+.share-text p {
+  margin: 0; /* Removes default margin from the p element */
+}
