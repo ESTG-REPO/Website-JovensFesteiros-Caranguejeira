@@ -199,8 +199,10 @@
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
 
-        <!-- FIELDS (updated to match Formoid) -->
+       <!-- FIELDS -->
         <div class="row g-4 mb-3">
+
+          <!-- Nome -->
           <div class="col-md-6" data-for="name">
             <div class="form-floating">
               <input 
@@ -215,11 +217,13 @@
               <div class="invalid-feedback text-start">Por favor, insira o seu nome.</div>
             </div>
           </div>
+
+          <!-- Email -->
           <div class="col-md-6" data-for="email">
             <div class="form-floating">
               <input 
                 type="email" 
-                name="email2"  <!-- renamed to avoid conflict with hidden 'email' -->
+                name="email" 
                 data-form-field="email"
                 class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
                 id="email" 
@@ -229,7 +233,26 @@
               <div class="invalid-feedback text-start">Por favor, insira um e-mail válido.</div>
             </div>
           </div>
+
+          <!-- Nº de Bilhetes -->
+          <div class="col-md-6" data-for="bilhetes">
+            <div class="form-floating">
+              <input 
+                type="number" 
+                name="bilhetes" 
+                data-form-field="bilhetes"
+                class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
+                id="bilhetes" 
+                placeholder="Nº de Bilhetes" 
+                min="1"
+                required>
+              <label for="bilhetes" class="text-white">Nº de Bilhetes</label>
+              <div class="invalid-feedback text-start">Por favor, indique a quantidade de bilhetes.</div>
+            </div>
+          </div>
+
         </div>
+
 
         <!-- SUBMIT -->
         <div class="text-center">
