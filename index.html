@@ -179,61 +179,68 @@
     <h3 class="display-4 fw-bold mb-3">Peça <em>Bilhete</em> Aqui!</h3>
     <h3 class="display-4 fw-bold mb-4">👇👇👇</h3>
 
-         <div class="row justify-content-center mt-4">
-            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="xFu8/M95LWJ51SzDDQi/+D5ttHwamdn7B3i6Y/AS3/hUL1tcygJBfBEyxtDuqnhy52TJD6W30HE3A7I2bnwlfQgE3TcjCU55fuZocAogm4oEkw6rlt19T8AjSnFATPHY">
-                    <div class="row">
-          <!-- HONEYPOT (spam prevention) -->
-          <input type="text" name="_honey" style="display:none">
-          <input type="hidden" name="_captcha" value="false">
+<div class="row justify-content-center mt-4">
+  <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+    <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
+      
+      <!-- REQUIRED for Mobirise Formoid -->
+      <input type="hidden" name="email" data-form-email="true" value="xFu8/M95LWJ51SzDDQi/+D5ttHwamdn7B3i6Y/AS3/hUL1tcygJBfBEyxtDuqnhy52TJD6W30HE3A7I2bnwlfQgE3TcjCU55fuZocAogm4oEkw6rlt19T8AjSnFATPHY">
 
-          <!-- SUCCESS + ERROR MESSAGES -->
-          <div hidden data-form-alert class="alert alert-success text-center fw-bold" role="alert">
-            ✅ Pedido de Bilhete Enviado com Sucesso!
-          </div>
-          <div hidden data-form-alert-danger class="alert alert-danger text-center fw-bold" role="alert">
-            ❌ Ocorreu um erro. Por favor, tente novamente.
-          </div>
+      <div class="row">
+        <!-- SYSTEM MESSAGES -->
+        <div hidden data-form-alert class="alert alert-success text-center fw-bold" role="alert">
+          ✅ Pedido de Bilhete Enviado com Sucesso!
+        </div>
+        <div hidden data-form-alert-danger class="alert alert-danger text-center fw-bold" role="alert">
+          ❌ Ocorreu um erro. Por favor, tente novamente.
+        </div>
 
-          <!-- FIELDS -->
-          <div class="row g-4 mb-3">
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input 
-                  type="text" 
-                  name="name" 
-                  class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
-                  id="name" 
-                  placeholder="Nome" 
-                  required>
-                <label for="name" class="text-white">Nome</label>
-                <div class="invalid-feedback text-start">Por favor, insira o seu nome.</div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input 
-                  type="email" 
-                  name="email" 
-                  class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
-                  id="email" 
-                  placeholder="E-mail" 
-                  required>
-                <label for="email" class="text-white">E-mail</label>
-                <div class="invalid-feedback text-start">Por favor, insira um e-mail válido.</div>
-              </div>
+        <!-- HONEYPOT -->
+        <input type="text" name="_honey" style="display:none">
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- FIELDS (updated to match Formoid) -->
+        <div class="row g-4 mb-3">
+          <div class="col-md-6" data-for="name">
+            <div class="form-floating">
+              <input 
+                type="text" 
+                name="name" 
+                data-form-field="name"
+                class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
+                id="name" 
+                placeholder="Nome" 
+                required>
+              <label for="name" class="text-white">Nome</label>
+              <div class="invalid-feedback text-start">Por favor, insira o seu nome.</div>
             </div>
           </div>
-
-          <!-- SUBMIT -->
-          <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-lg px-5 fw-bold rounded-pill shadow hover-scale">
-              ✉️ Enviar Pedido
-            </button>
+          <div class="col-md-6" data-for="email">
+            <div class="form-floating">
+              <input 
+                type="email" 
+                name="email2"  <!-- renamed to avoid conflict with hidden 'email' -->
+                data-form-field="email"
+                class="form-control thick-border bg-dark bg-opacity-50 text-white fw-bold" 
+                id="email" 
+                placeholder="E-mail" 
+                required>
+              <label for="email" class="text-white">E-mail</label>
+              <div class="invalid-feedback text-start">Por favor, insira um e-mail válido.</div>
+            </div>
           </div>
-        </form>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-warning btn-lg px-5 fw-bold rounded-pill shadow hover-scale">
+            ✉️ Enviar Pedido
+          </button>
+        </div>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
 
     <!-- CALL TO ACTION -->
     <div class="mt-4">
